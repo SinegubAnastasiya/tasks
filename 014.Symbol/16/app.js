@@ -5,4 +5,3 @@
 let str = 'hSСhOol СomPAnY';
 
 console.log('#' + str.toLowerCase().split(' ').join(''));
-

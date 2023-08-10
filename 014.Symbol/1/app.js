@@ -2,3 +2,4 @@
 
 let str = prompt();
 
+console.log(str.split(' ').join('-'));
