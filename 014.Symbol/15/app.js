@@ -6,8 +6,8 @@ let gl = 'aeyuio';
 let result = '';
 
 for (let i = 0; i < str.length; i++) {
-    if (str.includes(gl[i])) {
-        result += gl[i];
+    if (gl.includes(str[i])) {
+        result += str[i];
     }
 }
 console.log(result);
