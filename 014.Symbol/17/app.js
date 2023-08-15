@@ -3,6 +3,22 @@
 // преобразовать в верхний регистр
 // anna_test_test -> annaTestTest
 
-let str = 'anna_test_test';
+// let arr = 'anna_test_test'.split('_');
+// let res = arr[0];
 
-console.log(str.split('_t').join('T'));
+// for (let i = 1; i < arr.length; i++) {
+//     res += arr[i][0].toUpperCase() + arr[i].slice(1);
+// }
+// console.log(res);
+
+let arr = 'anna_test_test'.split('_');
+let res = '';
+
+for (let i = 0; i < arr.length; i++) {
+    if (i === 0) {
+        res += arr[i];
+        continue;
+    }
+    res += arr[i][0].toUpperCase() + arr[i].slice(1);
+}
+console.log(res);
