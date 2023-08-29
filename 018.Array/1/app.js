@@ -8,6 +8,7 @@ let arr = [];
 for (let i = 0; i < num; i++) {
     arr.push(prompt('введите элемент массива'));
 }
+
 let res = arr.filter(function(elem) {
     if (!isNaN(elem)) {
         return true;
