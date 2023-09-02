@@ -16,7 +16,11 @@ let res = database.filter(function(elem) {
 }) 
 
 const result = database.filter(elem => elem.id !== body.id)
-res.push(body)
+if (res.id !== body.id) {
+    res.push(body)
+} else {
+    console.log('error');
+}
 
 console.log(res);
 
