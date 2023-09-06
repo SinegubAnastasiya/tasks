@@ -14,6 +14,7 @@ const res = database.filter(function(elem) {
     } 
 })
 
+body.id = body.label.toLowerCase();
 if (res.length === 0) {
     database.push(body);
     console.log(database);

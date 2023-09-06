@@ -46,12 +46,12 @@ for (const key in obj) {
 
 
 
-// for (let i = 0; i < arr.length; i++) {
-//     count = arr[i];
-//     if (obj[count] != undefined) {
-//         obj[count]++;
-//     } else {
-//         obj[count] = 1;
-//     }
-// }
-// console.log(obj);
+for (let i = 0; i < arr.length; i++) {
+    count = arr[i];
+    if (obj[count] != undefined) {
+        obj[count]++;
+    } else {
+        obj[count] = 1;
+    }
+}
+console.log(obj);
