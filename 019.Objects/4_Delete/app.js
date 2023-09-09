@@ -13,7 +13,7 @@ let res = database.filter(function(elem) {
     if (elem.id !== body.id) {
         return true;
     }
-}) 
+})
 
 const result = database.filter(elem => elem.id !== body.id)
 if (res.id !== body.id) {
