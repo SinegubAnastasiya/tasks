@@ -4,6 +4,16 @@
 
 const arr = [2, 54, 32, 97, 1];
 
+function getMax(arr) {
+    let max = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i]
+        }
+    }
+    return max
+}
+
 function getMin(arr) {
     let min = arr[0];
     for (let i = 0; i < arr.length; i++) {
@@ -15,4 +25,5 @@ function getMin(arr) {
 }
 
 let result = getMin(arr);
-console.log(result);
+let maximum = getMax(arr);
+console.log(`min = ${result}, max = ${maximum}`);
