@@ -7,22 +7,9 @@ const obj = {
     name: 'Nastya',
     city: 'Minsk',
     age: 25
-}
+};
 
-function getNewObject(obj) {
-    let newObj = {};
-    for (let key in obj) {
-        if (!isNaN(obj[key])) {
-            newObj[key] = obj[key];
-        }
-    }
-    return newObj
-}
-
-let result = getNewObject(obj);
-console.log(result);
-
-// (function(obj) {
+// function getNewObject(obj) {
 //     let newObj = {};
 //     for (let key in obj) {
 //         if (!isNaN(obj[key])) {
@@ -30,4 +17,17 @@ console.log(result);
 //         }
 //     }
 //     return newObj
-// }())
+// }
+
+// let result = getNewObject(obj);
+// console.log(result);
+
+(function(obj) {
+    let newObj = {};
+    for (let key in obj) {
+        if (!isNaN(obj[key])) {
+            newObj[key] = obj[key];
+        }
+    }
+    console.log(newObj);
+})(obj);

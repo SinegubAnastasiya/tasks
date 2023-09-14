@@ -10,13 +10,25 @@ for (let i = 0; i < password.length; i++) {
 }
 console.log(arr);
 
-function checkPassword(arr) {
+function checkPassword(password) {
+    // let result = arr.some(function(elem) {
+    //     if (arr.length > 8 && isNumeric(elem) === true) {
+    //         return true;
+    //     }
+    // })
+    let newStr = password.toLowerCase();
     let result = arr.some(function(elem) {
-        if (arr.length > 8 && isNumeric(elem) === true) {
-            return true;
+        if (typeof elem == 'number') {
+            return elem
         }
     })
+    if (newStr === password && password.length > 7 && result !== null) {
+        return true
+    } else {
+        return false
+    }
+
 }
 
-let res = checkPassword(arr);
+let res = checkPassword(password);
 console.log(res);
