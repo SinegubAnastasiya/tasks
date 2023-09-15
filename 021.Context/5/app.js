@@ -8,26 +8,19 @@ let arr = [];
 for (let i = 0; i < password.length; i++) {
     arr.push(password[i]);
 }
-console.log(arr);
 
 function checkPassword(password) {
-    // let result = arr.some(function(elem) {
-    //     if (arr.length > 8 && isNumeric(elem) === true) {
-    //         return true;
-    //     }
-    // })
     let newStr = password.toLowerCase();
     let result = arr.some(function(elem) {
-        if (typeof elem == 'number') {
-            return elem
+        if (!isNaN(elem)) {
+            return true
         }
     })
-    if (newStr === password && password.length > 7 && result !== null) {
-        return true
+    if (newStr !== password && password.length > 7 && result === true) {
+        return 'password is safe'
     } else {
         return false
     }
-
 }
 
 let res = checkPassword(password);
