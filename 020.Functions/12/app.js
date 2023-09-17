@@ -7,8 +7,6 @@ function isValidSTR(str) {
     return isNaN(str) ? true : false
 }
 
-
-
 function checkStr(str) {
     let res = isValidSTR(str)
     if (res === true) {
