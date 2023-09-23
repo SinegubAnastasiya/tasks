@@ -10,6 +10,7 @@ function getArr(arr) {
         if (arr[i + 1] == arr[i] + 1) {
             nArr.push(arr[i])
         } else {
+            nArr.push(arr[i]);
             break;
         }
     }
