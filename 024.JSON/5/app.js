@@ -16,8 +16,7 @@ function getArr(n) {
 
 function isValid(arr) {
     if (!Array.isArray(arr)) throw new Error('Не массив')
-    const res = arr.every(el => isNaN(el) ? false : true
- )
+    const res = arr.every(el => isNaN(el) ? false : true)
     if (!res) throw new Error('Не число')
     return res
 }

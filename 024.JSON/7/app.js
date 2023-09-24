@@ -4,7 +4,7 @@
 // 2 === 81, 1
 // 2=== 1)
 
-let num = '4895r';
+let num = '4895';
 
 function isValid(num) {
     if(isNaN(num)) throw new Error('Не число')
@@ -13,9 +13,7 @@ function isValid(num) {
 function getSqrt(num) {
     try {
         isValid(num)
-        let res = num.split('').map(el => {
-           return el ** 2;
-        })
+        let res = num.split('').map(el => el ** 2)
         return res.join('')
     } catch (error) {
         return error.message
