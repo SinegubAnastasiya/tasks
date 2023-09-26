@@ -2,12 +2,12 @@
 // найти в данной почте “@”. Если же есть, то вывести булевое true, в противном
 // случае бросить исключение и его обработать
 
-const email = 'sinegub@gmail.com';
+const email = 'sinegubgmail.com';
 
 function checkEmail(email) {
     try {
-        if (email.includes('@')) return true;
-        else throw new Error('Введите корректный email')
+        if (!email.includes('@')) throw new Error('Введите корректный email');
+        return true
     } catch (error) {
         return error.message;
     }
