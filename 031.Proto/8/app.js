@@ -13,7 +13,6 @@ btn.addEventListener('click', () => {
         for (let i = 0; i < inp.value.length; i++) {
             res += +inp.value[i] * 2 ** (inp.value.length - i - 1)
         }
-        console.log(typeof(res));
         p.textContent = res
         inp.value = ''
     } catch (error) {
