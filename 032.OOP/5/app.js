@@ -67,9 +67,6 @@
 // console.log(anagram.checkWord());
 
 class Anagram {
-    firstWord;
-    secondWord;
-
     checkWord = (firstWord, secondWord) => {
         try {
             if (!firstWord || !secondWord) throw new Error('No words')
