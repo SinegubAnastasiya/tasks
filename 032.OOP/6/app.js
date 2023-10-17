@@ -10,3 +10,29 @@
 // Задание:
 // Необходимо вывести в консоль весь массив
 
+class ServerGetAll {
+    controller () {
+        try {
+            const data = this.service()
+            return data
+        } catch (error) {
+            return error.message
+        }
+    }
+
+    service () {
+        const data = this.repository()
+        return data
+    }
+
+    repository () {
+        const arr = [{id: 1, name: 'nastya'}, {id: 2, name: 'kolya'}, {id: 3, name: 'vlad'}]
+        return arr
+    }
+}
+
+const servergetall = new ServerGetAll()
+console.log(servergetall.controller());
+
+
+
