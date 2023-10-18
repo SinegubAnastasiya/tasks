@@ -15,3 +15,21 @@
 // Необходимо найти id клиента в массиве БД. Если совпадение есть, произвести
 // обновление значений для соответствующих ключей.
 // Если совпадения по id нет – ошибка. Добавить проверки
+
+class ServerPut {
+    controller (json) {
+
+    }
+
+    service (json) {
+
+    }
+
+    repository (json) {
+
+    }
+}
+
+const serverPut = new ServerPut()
+json = JSON.parse(`{ {"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 }`)
+console.log(serverPut.controller(json));

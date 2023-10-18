@@ -17,3 +17,39 @@
 // label в toLowerCase таким образом, чтобы в БД был запушен объект вида
 // {"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1}
 // Если совпадение есть – ошибка. Добавить проверки 
+
+class ServerPost {
+    controller (json) {
+        try {
+            const res = this.service(json)
+            return res
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    service (json) {
+        const res = this.repository(json)
+        return res
+    }
+
+    repository (json) {
+        const arr = [
+            { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+            { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
+            { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
+            { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
+            { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
+            ];
+        const newData = {
+            id : json.label.toLowerCase(),
+            ...json 
+        }
+        arr.push(newData)
+        return arr
+    }
+}
+
+const serverPost = new ServerPost()
+json = JSON.parse(`{ "label": "JavaScript", "category": "programmingLanguages", "priority": 1 }`)
+console.log(serverPost.controller(json));
