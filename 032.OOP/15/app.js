@@ -14,3 +14,33 @@
 // }`
 // Необходимо осуществить удаление по id. Если совпадения нет – ошибка. Добавить
 // проверки
+
+class ServerDelete {
+
+    controller (json) {
+        const res = this.service(json)
+        return res
+    }
+
+    service (json) {
+        const res = this.repository(json)
+        return res
+    }
+
+    repository (json) {
+        const arr = [
+            { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+            { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
+            { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
+            { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
+            { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
+            ];
+
+        const res = arr.filter((el) => el.id !== json.id)
+        return res
+    }
+}
+
+const serverDelete = new ServerDelete()
+json = JSON.parse(`{ "id": "javascript" }`)
+console.log(serverDelete.controller(json));

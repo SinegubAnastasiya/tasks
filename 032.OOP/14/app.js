@@ -17,19 +17,31 @@
 // Если совпадения по id нет – ошибка. Добавить проверки
 
 class ServerPut {
-    controller (json) {
-
+    controller(json) {
+        const res = this.service(json)
+        return res
     }
 
-    service (json) {
-
+    service(json) {
+        const res = this.repository(json)
+        return res
     }
 
-    repository (json) {
+    repository(json) {
+        const arr = [
+            { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+            { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
+            { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
+            { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
+            { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
+        ];
 
+        const res = arr.filter((el) => el.id !== json.id)
+        res.push(json)
+        return res
     }
 }
 
 const serverPut = new ServerPut()
-json = JSON.parse(`{ {"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 }`)
+json = JSON.parse(`{ "id": "javascript", "label": "test", "category": "programmingLanguages", "priority": 1 }`)
 console.log(serverPut.controller(json));
