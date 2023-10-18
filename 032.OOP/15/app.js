@@ -36,7 +36,9 @@ class ServerDelete {
             { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
             ];
 
-        const res = arr.filter((el) => el.id !== json.id)
+        const res = arr.filter((el) => {
+            if (el.id !== json.id) return el
+        })
         return res
     }
 }

@@ -36,8 +36,10 @@ class ServerPut {
             { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
         ];
 
-        const res = arr.filter((el) => el.id !== json.id)
-        res.push(json)
+        const res = arr.map((el) => {
+            if (el.id === json.id) return el = json
+            else return el
+        })
         return res
     }
 }
