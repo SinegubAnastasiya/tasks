@@ -15,3 +15,37 @@
 // Необходимо найти id клиента в массиве БД. Если совпадение есть, произвести
 // обновление значений для соответствующих ключей.
 // Если совпадения по id нет – ошибка. Добавить проверки 
+
+class ServerPut {
+    middleware (json) {
+        const res = this.controller(json)
+        return res
+    }
+
+    controller (json) {
+        const res = this.service(json)
+        return res
+    }
+    service (json) {
+        const res = this.repository(json)
+        return res
+    }
+    repository (json) {
+        const arr = [
+            { "id": 1, "name": "Yesenia", "age": 22 },
+            { "id": 2, "name": "Hanna", "age": 22 },
+            { "id": 3, "name": "Stanislau", "age": 25 },
+            { "id": 4, "name": "German", "age": 18 },
+            { "id": 5, "name": "Maria", "age": 27 }
+            ]
+
+        return arr.map((el) => {
+            if (el.id == json.id) return json
+            else return el
+        })
+    }
+}
+
+const serverput = new ServerPut()
+const json = JSON.parse(`{ "id": 1, "name": "Test", "age": 1 }`)
+console.log(serverput.middleware(json)); 
