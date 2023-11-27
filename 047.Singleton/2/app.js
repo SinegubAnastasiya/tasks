@@ -15,10 +15,7 @@ class Html {
         const arr_unique = [];
 
         btn.addEventListener('click', () => {
-            for (let i = 0; i < inp.value.length; i++) {
-                arr.push(inp.value[i]);
-                inp.value = '';
-            }
+            arr.push(inp.value);
             div.innerHTML = arr;
 
             for (let i = 0; i < arr.length; i++) {
