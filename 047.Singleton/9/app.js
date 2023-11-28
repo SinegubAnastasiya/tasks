@@ -5,8 +5,14 @@ const run = document.querySelector('.run');
 const next = document.querySelector('.next');
 const audio = document.querySelector('audio');
 const h1 = document.querySelector('h1');
+const h2 = document.querySelector('h2');
+const img = document.querySelector('.image');
 let flag = true;
-const audios = [{path: "./assets/song1.mp3", artist: 'Olga Buzova'}, {path: "./assets/song2.mp3", artist: 'SEREBRO'}, {path: "./assets/song3.mp3", artist: 'DAVA'}];
+const audios = [
+{path: "./assets/song1.mp3", artist: 'Olga Buzova', song: 'song1', img: "./assets/img1.png"}, 
+{path: "./assets/song2.mp3", artist: 'Serebro', song: 'song2', img: "./assets/img2.png"}, 
+{path: "./assets/song3.mp3", artist: 'DAVA', song: 'song3', img: "./assets/img3.png"}
+];
 let current_index_song = 0;
 
 run.addEventListener('click', () => {
@@ -21,6 +27,8 @@ run.addEventListener('click', () => {
         run.textContent = 'Run';
     }
     h1.textContent = audios[current_index_song].artist;
+    h2.textContent = audios[current_index_song].song;
+    img.style = `background-image: url(${audios[current_index_song].img})`;
 })
 
 next.addEventListener('click', () => {
@@ -29,6 +37,8 @@ next.addEventListener('click', () => {
     audio.src = audios[current_index_song].path;
     run.textContent = 'Pause';
     h1.textContent = audios[current_index_song].artist;
+    h2.textContent = audios[current_index_song].song;
+    img.style = `background-image: url(${audios[current_index_song].img})`;
     audio.play();
     flag = false;
 })
@@ -39,6 +49,8 @@ prev.addEventListener('click', () => {
     audio.src = audios[current_index_song].path;
     run.textContent = 'Pause';
     h1.textContent = audios[current_index_song].artist;
+    h2.textContent = audios[current_index_song].song;
+    img.style = `background-image: url(${audios[current_index_song].img})`;
     audio.play();
     flag = false;
 })

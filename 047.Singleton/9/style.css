@@ -1,0 +1,7 @@
+.image {
+    background-image: url(./assets/img1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 300px;
+}
