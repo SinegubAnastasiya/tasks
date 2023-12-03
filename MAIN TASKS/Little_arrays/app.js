@@ -11,7 +11,7 @@
 // 6 -> [[1, 2, 3, 4, 5, 6]]
 
 const arr = [1, 2, 3, 4, 5, 6];
-let n = 5;
+let n = 2;
 let nArr = [];
 
 if (!isNaN(n) && n <= arr.length && n !== 0) {

@@ -22,19 +22,33 @@ const app = express();
 //     res.send(id)
 // })
 
-app.get('/task/:id', (req, res) => {
-    const { id } = req.params;
-    const arr = [
-        { "id": 1, "name": "Yesenia", "age": 22 },
-        { "id": 2, "name": "Hanna", "age": 22 },
-        { "id": 3, "name": "Stanislau", "age": 25 },
-        { "id": 4, "name": "German", "age": 18 },
-        { "id": 5, "name": "Maria", "age": 27 }
-    ]
+app.get('/:id', (req, res) => {
+    // const { id } = req.params;
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let n = 2;
+    let nArr = [];
 
-    const result = arr.filter((el) =>  el.id == id)
-    res.send(result)
+    if (!isNaN(n) && n <= arr.length && n !== 0) {
+        for (let i = 0; i < arr.length; i += n) {
+            nArr.push(arr.slice(i, i + n))
+        }
+    }
+    res.send(nArr)
 })
+
+// app.get('/task/:id', (req, res) => {
+//     const { id } = req.params;
+//     const arr = [
+//         { "id": 1, "name": "Yesenia", "age": 22 },
+//         { "id": 2, "name": "Hanna", "age": 22 },
+//         { "id": 3, "name": "Stanislau", "age": 25 },
+//         { "id": 4, "name": "German", "age": 18 },
+//         { "id": 5, "name": "Maria", "age": 27 }
+//     ]
+
+//     const result = arr.filter((el) =>  el.id == id)
+//     res.send(result)
+// })
 
 app.listen(3000, () => {
     console.log('Server is running');
