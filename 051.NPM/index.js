@@ -9,6 +9,8 @@ app.get('/', (req, res) => {
     res.send(arr)
 })
 
+
+
 app.get('/:id', (req, res) => {
     const { id } = req.params
     const int = showById(id);
@@ -35,7 +37,7 @@ app.delete('/:id', (req, res) => {
     res.send(update)
 })
 
-app.listen(3000, () => console.log('server run'))
+app.listen(3000, () => console.log('running'))
 
 
 
