@@ -1,0 +1,50 @@
+// function sumNumbers(a, b) {
+
+// }
+
+// const sumNumbers = function(a, b) {
+
+// }
+
+
+// let f = function() {
+
+//     console.log(1);
+  
+//   }
+  
+//   const execute = function(f) {
+  
+//     setTimeout(f, 1000);
+  
+//   }
+  
+//   execute(f); // что выведет в консоль и почему
+  
+//   f = function() {
+  
+//     console.log(2);
+  
+//   }
+
+//   const obj = {
+
+//   }
+
+  class A 
+    arr;
+    constructor () {
+        this.arr = []
+    }
+    addElement(elems) {
+        for (let i = 0; i < elems.length; i++) {
+            if (!this.arr.includes(elems[i])) this.arr.push(elems[i])
+        }
+    }
+  )
+
+const ex = new A()
+ex.addElement(1, 2, 3);
+console.log(arr);
+  
+  
