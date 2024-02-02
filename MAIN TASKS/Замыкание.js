@@ -1,4 +1,4 @@
-// ---Замыканіе
+// ---Замыкание
 
 function sumNumbers() {
     let sum = 0
